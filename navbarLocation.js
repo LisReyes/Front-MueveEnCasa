@@ -67,8 +67,8 @@ footer.innerHTML = `
               <h5>Mi Cuenta</h5>
               <ul class="footerList">
                 <li><a href="../Perfil/perfil.html">Mi perfil</a></li>
-                <li><a href="../pedidos/pedidos.html">Mis pedidos</a></li>
-                <li><a href="../AgregarProducto/agregarProducto.html">Agregar un producto</a></li>
+                <li><a href="../pedidos/pedidos.html">Mis rutinas</a></li>
+                <li><a href="../AgregarProducto/agregarProducto.html">Recetas</a></li>
               </ul>
             </div>
           </div>
