@@ -4,17 +4,17 @@ navbarLocation.innerHTML = `
     <!--Barra de navegacion -->
     <nav class="navbar navbar-expand-lg  container-nav">
         <div class="container ">
-            <a class="navbar-brand" href="#"><img src="./Assets/Images/Logo.png" alt="Logo" class="img-fluid" width="90px" /></a>
+            <a class="navbar-brand" href="#"><img src="../Assets/Images/Logo.png" alt="Logo" class="img-fluid" width="90px" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item item">
-                        <a class="nav-link active " href="#">Inicio</a>
+                        <a class="nav-link active " href="../index.html">Inicio</a>
                     </li>
                     <li class="nav-item item">
-                        <a class="nav-link " href="#">Meditación</a>
+                        <a class="nav-link " href="../Pages/identificate.html">Meditación</a>
                     </li>                  
                     <li class="nav-item dropdown item">
                         <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@ navbarLocation.innerHTML = `
                     </li>
                 </ul>
                 <div class="d-flex">                    
-                    <button class="btn-light ms-3 btn-login">Login</button>
+                    <button class="btn-light ms-3 btn-login"><a href="../Pages/identificate.html"></a>Login</button>
                 </div>
             </div>
         </div>
@@ -66,9 +66,9 @@ footer.innerHTML = `
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
               <h5>Mi Cuenta</h5>
               <ul class="footerList">
-                <li><a href="../Perfil/perfil.html">Mi perfil</a></li>
-                <li><a href="../pedidos/pedidos.html">Mis rutinas</a></li>
-                <li><a href="../AgregarProducto/agregarProducto.html">Recetas</a></li>
+                <li><a href="">Mi perfil</a></li>
+                <li><a href="">Mis rutinas</a></li>
+                <li><a href="">Recetas</a></li>
               </ul>
             </div>
           </div>

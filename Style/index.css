@@ -221,11 +221,7 @@ form button[type="submit"]{
 
 /* ANUNCIO EJERCICIO AMIGABLE */
 .containerEjer{
-    position: relative;
-    width: 100%; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   
     margin-top: 120px;    
 }
 .des_Anun h3{    
@@ -237,7 +233,7 @@ form button[type="submit"]{
     font-weight: 500;
 }
 .des_Anun p{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     text-align: justify;
     font-family: 'Comfortaa', sans-serif;  
@@ -268,7 +264,7 @@ form button[type="submit"]{
 }
 .contIns .prinIn{
     position: relative;
-    margin: auto;    
+    /* margin: auto;     */
     width: 380px;
     height: 150px;
     box-shadow: 5px 10px 20px rgba(134, 108, 189, 0.8);
@@ -287,14 +283,13 @@ form button[type="submit"]{
 }
 .contIns .icono{                
     width: 40px;    
-    margin-left: 300px;
-    margin-top: -120px;    
+    margin-left: 250px;
+    margin-top: -40px;    
 }
 .contIns .icono p{
-    position: relative;
-    margin: auto;
-    margin-left: -260px;
-    margin-top: 10px;
+    position: absolute;
+    left: 10px;
+    top: 120px;
     font-weight: 600;
     font-size: 15px;
 }
@@ -403,4 +398,10 @@ form button[type="submit"]{
 .footer{
     margin-top: 120px;
     background-color:#e6d6e7;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer ul{
+    list-style: none;
 }
