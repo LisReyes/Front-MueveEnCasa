@@ -33,7 +33,7 @@ navbarLocation.innerHTML = `
                     </li>
                 </ul>
                 <div class="d-flex">                    
-                    <button class="btn-light ms-3 btn-login"><a href="../Pages/identificate.html"></a>Login</button>
+                    <button class="btn-light ms-3 btn-login" onclick="redirectToLogin()">Login</button>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ footer.innerHTML = `
           <div class="row noScroll">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3" id="logoLocation">
               <a href="#" style="width: 200px;" >
-                <img class="mx-auto" src="./Assets/Images/Logo.png" alt="Logo Muevete en casa" width="150px">
+                <img class="mx-auto" src="../Assets/Images/Logo.png" alt="Logo Muevete en casa" width="150px">
               </a>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
@@ -77,3 +77,6 @@ footer.innerHTML = `
           </div>
         </div>
     `;
+function redirectToLogin() {
+  window.location.href = "../Pages/identificate.html";
+}
