@@ -42,7 +42,7 @@ for(let i=0; i<mostrarClave.length; i++){
             // agregamos el nuevo icono
             mostrarClave[i].classList.add('fa-eye=slash');
             // le agreagmos la clase active
-            mostrarClave[i].classList.add['active'];            
+            mostrarClave[i].classList.add('active');            
         }else{
             // le cambiamos el tipo de texto a password 
             inputPass[i].setAttribute('type','password');
@@ -71,17 +71,24 @@ if(document.getElementById('btnRegistro')){
         msError.innerHTML = "";
         msError.classList.remove('active');
 
-        let nombre = formRegistro.nombre.value.trim();
-        let apellido = formRegistro.apellido.value.trim();       
+       nombre = formRegistro.nombre.value.trim();
+       apellido = formRegistro.apellido.value.trim();
+       telefono = formRegistro.telefono.value.trim();
+       correo = formRegistro.correo.value.trim();
+       password = formRegistro.password.value.trim();
+
 
         // validamos que los campos NO ESTAN VACIOS
-        if(nombre == "" && apellido == "" && correo == "" && password == ""){
-            // mostramos error en la pantalla
-            mostrarError(' Todos los campos son obligatorios ', msError);
-            inputError([formRegistro.nombre,formRegistro.apellido,formRegistro.correo,formRegistro.password]);
+        if(nombre=="" && apellido=="" && telefono =="" && correo=="" && password==""){
+            //mostramos error en pantalla
+            mostrarError('Todos los campos son obligatorios',msError);
+            //le agregamos la clase error a los input
+            //le pasamos los daos array
+            inputError([formRegistro.nombre,formRegistro.apellido,formRegistro.telefono,formRegistro.correo,formRegistro.password]);
             return false;
         }else{
-
+            //removemos esa clase con la sigueinte funcion
+            //inputErrorRemove([formRegistro.nombre,formRegistro.apellido,formRegistro.correo,formRegistro.password])
         }
         
         // validamos cada input
@@ -115,14 +122,31 @@ if(document.getElementById('btnRegistro')){
             }
         }
 
-        if(correo == "" || correo == null){
+        if(telefono == "" || telefono == null){
+            mostrarError('Ingrese su teléfono', msError);
+            inputError([formRegistro.telefono]);
+            formRegistro.telefono.focus();
+            return false;
+        }else{
+            if(!validarSoloNumeros(telefono)){
+                mostrarError("Ingrese un número válido",msError);
+                inputError([formRegistro.telefono]);
+                formRegistro.telefono.focus();
+                return false;
+            }
+        }
+
+        // Validamos el campo de correo
+        if (correo == "" || correo == null) {
             mostrarError('Ingrese su correo', msError);
             inputError([formRegistro.correo]);
             formRegistro.correo.focus();
             return false;
-        }else{
-            if(!validarSoloLetras(correo)){
-                mostrarError('Ingrese un correo válido, no se permiten caracteres especiales', msError);
+        } else {
+            // Utilizamos una expresión regular para verificar el formato del correo
+            const correoRegex = /^\S+@\S+\.\S+$/;
+            if (!correoRegex.test(correo)) {
+                mostrarError('Ingrese un correo válido', msError);
                 inputError([formRegistro.correo]);
                 formRegistro.correo.focus();
                 return false;
@@ -132,34 +156,35 @@ if(document.getElementById('btnRegistro')){
         if(password == "" || password == null){
             mostrarError('Ingrese una contraseña', msError);
             inputError([formRegistro.password]);
-            formRegistro.password.focus();
+            document.getElementById('password').focus();
             return false;
         }else{
             if(password <= 8){
                 mostrarError('Contraseña débil, minimo 8 caracteres', msError);
                 inputError([formRegistro.password]);
-                formRegistro.password.focus();
+                document.getElementById('password').focus();
                 return false;
             }
         }
 
         //validamos el cbxx-terminos
-        if(cbx_terminos.checked==false){
-            mostrarError('Por favor aceptar Términos y Condiciones',msError);
-            //le agregamos un clase error a su elemento padre
-            formRegistro.cbx_terminos.parentNode.classList.add('cbx-error');
-            return false;
-        }else{
-            formRegistro.cbx_terminos.parentNode.classList.remove('cbx-error');            
-        }
+        // if(cbx_terminos.checked==false){
+        //     mostrarError('Por favor aceptar Términos y Condiciones',msError);
+        //     //le agregamos un clase error a su elemento padre
+        //     formRegistro.cbx_terminos.parentNode.classList.add('cbx-error');
+        //     return false;
+        // }else{
+        //     formRegistro.cbx_terminos.parentNode.classList.remove('cbx-error');            
+        // }
         //una vez hechas las verificaciones enviaremos el formulario para luego recibirlo con php
         //Se crea un objeto JSON
         const datos = {};
         datos.nombre = nombre;
         datos.apellido = apellido;
+        datos.telefono = telefono;  
         datos.correo = correo;
         datos.password = password;
-        datos.telefono = telefono;       
+             
         console.log(datos);
     });
 
@@ -190,7 +215,7 @@ if(document.getElementById('btnLogin')){
 
         }
         if(correo=="" || correo==null){
-            mostrarError('Por favor ingrse su correo',msError);
+            mostrarError('Por favor ingrese su correo',msError);
             inputError([formLogin.correo]);
             formLogin.correo.focus();
             return false;
@@ -217,14 +242,31 @@ function mostrarError(mensaje,msError){
     msError.innerHTML='<p>'+mensaje+'</p>';
 }
 /*------------------AGREGAR CLASS ERROR INPUT-----*/
-function inputError(datos){
+function inputError(datos) {
     for (let i = 0; i < datos.length; i++) {
-        datos[i].classList.add('input-error');        
+      if (datos[i].classList) {
+        datos[i].classList.add('input-error');
+      }
     }
-}
+  }
+  
 // Validamos solo letras
 function validarSoloLetras(valor){
     if(!/^[a-zA-ZñÑáéíóúÁÉÍÓÚ]*$/.test(valor)){
+        return false;
+    }
+    return true;
+}
+
+// Validamos solo numeros
+function validarSoloNumeros(valor){
+    if(!/^([0-9]{8})*$/.test(valor)){
+        return false;
+    }
+    return true;
+}
+function validarCorreo(valor){
+    if(!/^[a-zA-Z0-9_.+-]+@(gmail|outlook|hotmail).mx$/.test(valor)){
         return false;
     }
     return true;
