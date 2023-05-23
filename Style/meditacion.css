@@ -1,0 +1,33 @@
+:root{/* Esta es la declaracion de varibales de los colores principales de la aplicación*/
+    --titulos-h1-color: #1D3557;
+    --subtitulos-h3-color: #3d0b60;
+    --p:#4b0081;
+    --bordes-color: hsl(248, 25%, 55%);
+    --fondo-tarjes: #fff;
+    --link: #650099;
+    --i: #7f00b2;
+}
+a{
+    text-decoration: none;
+}
+.container-intro{
+    margin-top: 100px;    
+    margin-bottom: 50px;
+}
+.container-beneficio{
+    margin-top: 50px;
+}
+/* Beneficios */
+.container-title{
+    margin-bottom: 80px;
+}
+.beneficios-title{
+    margin: auto;
+	font-size: 3rem;	
+	text-align: center;
+	color: var(--subtitulos-h3-color);
+    font-family: 'Poppins', sans-serif; 
+}
+.icono1{
+
+}
