@@ -4,17 +4,17 @@ navbarLocation.innerHTML = `
     <!--Barra de navegacion -->
     <nav class="navbar navbar-expand-lg  container-nav">
         <div class="container ">
-            <a class="navbar-brand" href="#"><img src="../Assets/Images/Logo.png" alt="Logo" class="img-fluid" width="90px" /></a>
+            <a class="navbar-brand" href="../../index.html"><img src="../../Assets/Images/Logo.png" alt="Logo" class="img-fluid" width="90px" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse " id="navbarNavDropdown">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item item">
-                        <a class="nav-link active " href="../index.html">Inicio</a>
+                        <a class="nav-link active " href="../../index.html">Inicio</a>
                     </li>
                     <li class="nav-item item">
-                        <a class="nav-link " href="../Pages/identificate.html">Meditación</a>
+                        <a class="nav-link " href="../Pages/meditacion.html">Meditación</a>
                     </li>                  
                     <li class="nav-item dropdown item">
                         <a class="nav-link  dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@ footer.innerHTML = `
           <div class="row noScroll">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3" id="logoLocation">
               <a href="#" style="width: 200px;" >
-                <img class="mx-auto" src="../Assets/Images/Logo.png" alt="Logo Muevete en casa" width="150px">
+                <img class="mx-auto" src="../../Assets/Images/Logo.png" alt="Logo Muevete en casa" width="150px">
               </a>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3">
